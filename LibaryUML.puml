@@ -1,0 +1,112 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+' Interfaces e Classes Abstratas
+interface SearchStrategy<T> {
+  +search(items: List<T>, query: String): List<T>
+}
+
+abstract class LibraryItem {
+  -title: String
+  +getTitle(): String
+}
+
+interface Observer {
+  +update(loan: Loan)
+}
+
+interface Subject {
+  +attach(observer: Observer)
+  +detach(observer: Observer)
+  +notifyObservers()
+}
+
+abstract class ItemFactory {
+  +createItem(details: Map<String, String>): LibraryItem
+}
+
+' Classes Concretas
+class Book {
+  -author: String
+  -isbn: String
+}
+class DVD {
+  -director: String
+  -duration: int
+}
+LibraryItem <|-- Book
+LibraryItem <|-- DVD
+
+class SearchByTitle implements SearchStrategy {
+  +search(items: List<LibraryItem>, query: String): List<LibraryItem>
+}
+class SearchByAuthor implements SearchStrategy {
+  +search(items: List<LibraryItem>, query: String): List<LibraryItem>
+}
+class SearchUserByName implements SearchStrategy {
+  +search(users: List<User>, query: String): List<User>
+}
+
+class User {
+  -name: String
+  -id: String
+}
+
+class Loan implements Subject {
+  -item: LibraryItem
+  -user: User
+  -dueDate: Date
+  -observers: List<Observer>
+  +isOverdue(): Boolean
+  +attach(observer: Observer)
+  +detach(observer: Observer)
+  +notifyObservers()
+}
+
+class OverdueNotifier implements Observer {
+  +update(loan: Loan)
+}
+
+class BookFactory extends ItemFactory {
+  +createItem(details: Map<String, String>): LibraryItem
+}
+class DvdFactory extends ItemFactory {
+  +createItem(details: Map<String, String>): LibraryItem
+}
+
+class Library {
+  -instance: Library {static}
+  -items: List<LibraryItem>
+  -users: List<User>
+  -loans: List<Loan>
+  -Library()
+  +getInstance(): Library {static}
+  +addItem(item: LibraryItem)
+  +findItems(query: String, strategy: SearchStrategy): List<LibraryItem>
+  ' ... outros métodos de gerenciamento interno
+}
+
+class LibraryFacade {
+  -library: Library
+  +borrowItem(itemTitle: String, userName: String)
+  +returnItem(itemTitle: String, userName: String)
+  +addNewItem(type: String, details: Map<String, String>)
+  +registerUser(name: String, id: String)
+  +findItemsByTitle(title: String): List<LibraryItem>
+  +findItemsByAuthor(author: String): List<LibraryItem>
+}
+
+' Relacionamentos
+LibraryFacade ..> Library : uses
+LibraryFacade ..> ItemFactory : uses
+LibraryFacade ..> SearchStrategy : uses
+Library "1" *-- "0..*" LibraryItem
+Library "1" *-- "0..*" User
+Library "1" *-- "0..*" Loan
+Loan "1" -- "1" LibraryItem
+Loan "1" -- "1" User
+Loan o-- Observer
+OverdueNotifier ..|> Observer
+
+@enduml
