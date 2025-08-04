@@ -1,0 +1,16 @@
+# Refatoração de Sistema de Biblioteca com Padrões de Projeto GoF
+
+## 1. Objetivo do Projeto
+
+Este projeto tem como objetivo refatorar a arquitetura de um sistema de gerenciamento de biblioteca que, em seu design original, apresentava problemas críticos de **alto acoplamento, repetição de código e dificuldades de manutenção**.
+
+A tarefa consistiu em aplicar padrões de projeto (Design Patterns) do Gang of Four (GoF) para criar uma solução mais robusta, flexível, coesa e de fácil extensão.
+
+## 2. Diagrama de Classes Refatorado
+
+A imagem abaixo representa a nova arquitetura do sistema, que incorpora os padrões de projeto para resolver os problemas identificados.
+
+![Diagrama UML da Solução](https://uml.planttext.com/plantuml/svg/nLRRJjj047stv7zOvGK74WjUBHHnKwL8RP0QslUrFOGjzcwwkwPr2n_Kx-YFTVPYnpOneb9HNo8pipDdRcU6CwMfr5LPX86wPtnB9Ir9Lb2bphMMBAqqB3F1r-m7aECmk6Cv42YtkYObb2b85GPXS42MN8EyfHae0kJIcEFNUQgqf9hY6zReoHgepExMHW6R-lHcGNw60I57oieZfg5K2NdFb4RTZ7ojGDO9mVUCRwQj8WoU332r29bs4QCobLJMI_JXlCurqmKqvXPd0_h62AFfJcnzxKAyJXN81v0-icgROwnH8IX7VFoTFhDOL-aNm32S0TMQOYh2kqbQXrEhpk55DHUQtTQDJ4NJ_RcQ9D_XdqBM7ZQJW74QUMGWM85r_42tfoxBcSzsOOlOriaxFsYRTYauEh9DSq0NGjpxQj9AtmdPBUUSgPJt2kcChZvVUPkSIJ1Hzgpo2jlF15fY3QrPjtMdZ_EvXTqZHiScNeVYPkcYjWqbhDmMK0BNQZ1aunFMSJysQzqddGGRw7DRal-1_Ga7vA9UqVBLcLTeqQ0Rwp5Og_E3uH2DnFUJ8s1_0l81aJmNaIYzmBeKcPj23EOGfIR0n8BvAO4hJ2CXvjTA6iuqMJGiMTWqcRh6RxGotCRvAO3oDoIaozD3himZ1hr9UEqUsV6i8JHyry3pVqjoJyo7_2r1skuxUTDjZbU6Pv3iv2ZGB7jgXs4VAzgPKFt1HAafOck2tqxgZQDfi-cN7ZYQxeS-edbkqtmsZyx5BUDMhw8UKMP4UO8b0yBjPouX1oIEOo8gBOKYvUzVMkJuWRTq0n9ungYP647iHU5YNocnGnJVku8MJjP6R8DDXPJYMvlEJVVqpOYfuwh3NPSWRlfAyh-pmPgjmE7eUjjv_kAiUBWDLWUaQMJKtIGpibiZWzBxzHxrJlbOdRjcRZL7_QCrkbhD3Vm81StmBBbkgFRy-Dh7yQATeiGKP--BBft6NmtszE0XcPnCo26Ukybn71zE-ZGRUUFMvfW3OLQXtSb6OnGdGxS3fVTdf095pJ8BW-76Y-F7HKST1cUuLl0_oZy0)
+
+## 3. Padrões de Projeto Aplicados e Justificativas encontram-se no PDF que foi enviado diretamente ao professor. 
+
